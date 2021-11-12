@@ -37,18 +37,17 @@ const app = new Vue({
                 text:'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis.',
             },
         ],
-        slideActive: 0,
+        slideActive: 2,
     },
 
     // Bonus step3
     // Applicare l’autoplay allo slider: ogni 3 secondi cambia immagine automaticamente.
-    created: function (sliders) {
-        // console.log(this.slides);
+    created: function () {
         setTimeout ( () => myFunction(), 3000);
 
         function myFunction() {
-            // window.location.reload();
-            console.log('hello');
+            console.log(this.slides);
+            
         }
 
         
