@@ -6,33 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carosello News</title>
     <link rel="stylesheet" href="./css/style.css">
+
+    <!-- vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <body>
-
-    <section class="carousel">
-        <!-- Images -->
-        <div class="images">
-            <!-- genera con vue -->
-            <div class="image-container">
-                <img src="./img/01.jpg" alt="Lorem">
-                <div class="text">
-                    <h3>Lorem</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.</p>
+    <div id="app">
+        <section class="carousel">
+            <!-- Images -->
+            <div class="images">
+                <!-- genera con vue -->
+                <div class="image-container">
+                    <img :src="slides[slideActive].image" :alt="slides[slideActive].title">
+                    <div class="text">
+                        <h3>{{ slides[slideActive].title }}</h3>
+                        <p>{{ slides[slideActive].text }}</p>
+                    </div>
                 </div>
             </div>
-        </div>
+    
+            <!-- Thumbnails -->
+            <div class="thumbs">
+                <!-- genera con vue  -->
+                <div v-for="(element, index) in slides" 
+                    class="thumb"
+                    :class="{active: index === slideActive}"
+                    @click="pushImage(index)"
+                >
+                <img :src="element.image" :alt="element.title">
+                </div>
 
-        <!-- Thumbnails -->
-        <div class="thumbs">
-            <!-- genera con vue  -->
-            <div class="thumb active">
-                <img src="./img/01.jpg" alt="Lorem">
+                <!-- creare l evento per scorrere sulle immagini -->
+                <div class="prev"@click="prevSlide">&uarr;</div>
+                <div class="next" @click="nextSlide">&darr;</div>
             </div>
-
-            <div class="prev">&uarr;</div>
-            <div class="next">&darr;</div>
-        </div>
-    </section>
+        </section>
+    </div>
+    
 
     <script src="./js/main.js"></script>
 </body>
