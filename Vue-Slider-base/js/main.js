@@ -38,14 +38,14 @@ const app = new Vue({
             },
         ],
         slideActive: 0,
-        timer: 0,
+        
     },
 
     // Bonus step3
     // Applicare l’autoplay allo slider: ogni 3 secondi cambia immagine automaticamente.
     created: function () {
-        this.timer = setInterval ( () =>{
-            console.log('hello');
+        setInterval ( () => {
+            // console.log('hello');
             this.nextSlide();
         }, 3000);
     },
