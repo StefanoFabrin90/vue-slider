@@ -46,7 +46,7 @@ const app = new Vue({
         setTimeout ( () => myFunction(), 3000);
 
         function myFunction() {
-            console.log(this.slides);
+            console.log('hello');
             
         }
 
