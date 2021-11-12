@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* CAROUSEL */
+.carousel {
+    width: 900px;
+    display: flex;
+}
+
+/* Images */
+.images {
+    width: 700px;
+    height: 400px;
+    background: #ccc;
+}
+
+.image-container {
+    position: relative;
+    height: 100%;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-container .text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px;
+    text-align: right;
+    font-size: 14px;
+    color: white;
+    background: rgba(0,0,0, .4);
+}
+
+/* Thumbnails */
+.thumbs {
+    position: relative;
+    width: 200px;
+    height: 400px;
+    background: #000;
+}
+
+.thumbs .thumb {
+    height: calc((400px) / 5);
+    cursor: pointer;
+}
+
+.thumb.active {
+    border: 4px solid #80dbcf;
+    opacity: 1;
+}
+
+.thumbs .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thumbs .prev,
+.thumbs .next {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ccc;
+    text-align: center;
+    cursor: pointer;
+}
+
+.thumbs .prev {
+    top: 10px;
+}
+
+.thumbs .next {
+    bottom: 10px;
+}
