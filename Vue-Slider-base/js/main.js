@@ -1,8 +1,7 @@
 /*
  * Vue Slider
  */
-// Bonus
-// Applicare l’autoplay allo slider: ogni 3 secondi cambia immagine automaticamente.
+
 
 // step1 
 // creo il 'container' che conterrá la mia logica e che dovra essere inserito nell HTML
@@ -40,6 +39,22 @@ const app = new Vue({
         ],
         slideActive: 0,
     },
+
+    // Bonus step3
+    // Applicare l’autoplay allo slider: ogni 3 secondi cambia immagine automaticamente.
+    created: function (sliders) {
+        // console.log(this.slides);
+        setTimeout ( () => myFunction(), 3000);
+
+        function myFunction() {
+            // window.location.reload();
+            console.log('hello');
+        }
+
+        
+    },
+    
+
     // step2
     // creo i metodi che devono contenere le funzioni per lo scorrimento delle immagini
     methods: {
@@ -67,6 +82,8 @@ const app = new Vue({
         // clicco sull immagine per non utilizzare le freccie, utilizzo una funzione con una parametro che poi andró a identificare come il mio index sull HTML (indice delle mie immagini, la loro posizione)
         pushImage (numImage) {
             this.slideActive = numImage;
-        }
-    }
+        },
+    },
+
+    
 });
